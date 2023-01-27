@@ -1,3 +1,5 @@
+import sleep from 'await-sleep';
+
 export default function Home(props) {
   return (
     <div>
@@ -19,6 +21,8 @@ export async function getServerSideProps() {
     'https://api.weather.gov/gridpoints/MFL/109,49/forecast'
   );
   const data = await response.json();
+
+  await sleep(3000);
 
   return {
     props: {
